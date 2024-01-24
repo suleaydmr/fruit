@@ -1,0 +1,37 @@
+﻿@model (List<Meyve> Meyveler, List<Slider> SliderImages)
+
+<section id="home-section" class="hero">
+    <div class="home-slider owl-carousel">
+        @foreach (var sliderImage in Model.SliderImages)
+        {
+            <div class="slider-item" style="background-image: url(@sliderImage.ImagePath);">
+            </div>
+        }
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/about.jpg);">
+                <a href="https://vimeo.com/152597004" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                    <span class="icon-play"></span>
+                </a>
+            </div>
+            @foreach (var meyve in Model.Meyveler)
+            {
+                <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate fadeInUp ftco-animated">
+                    <div class="heading-section-bold mb-4 mt-md-5">
+                        <div class="ml-md-0">
+                            <h2 class="mb-4">@meyve.Ad</h2>
+                        </div>
+                    </div>
+                    <div class="pb-md-5">
+                        <p>@meyve.TanitimMetni</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

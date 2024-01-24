@@ -1,0 +1,25 @@
+﻿@model Uretim
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Üretim Metni</h2>
+
+                <form asp-action="UretimEdit" method="post">
+                    <input type="hidden" asp-for="UretimId" />
+
+                    <div class="form-group">
+                        <label asp-for="UretimMetin">İçerik:</label>
+                        <textarea asp-for="UretimMetin" class="form-control" rows="10"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </form>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

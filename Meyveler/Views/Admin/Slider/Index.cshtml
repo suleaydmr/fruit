@@ -1,0 +1,42 @@
+﻿@model List<Slider>
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Slider Yönetimi</h2>
+
+                <p>
+                    <a asp-action="SliderCreate">Yeni Slider Ekle</a>
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Resim Yolu</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SliderId</td>
+                                <td>@item.ImagePath</td>
+                                <td>
+                                    <a asp-action="SliderEdit" asp-route-id="@item.SliderId">Düzenle</a> |
+                                    <a onClick="return confirm('Silmek istediğinizden emin misiniz?')" asp-action="SliderDelete" asp-route-id="@item.SliderId">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

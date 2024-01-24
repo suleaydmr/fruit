@@ -1,0 +1,47 @@
+﻿@model List<Sehir>
+
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Şehir Listesi</h2>
+
+
+                <p>
+                    <a asp-action="CityCreate">Yeni Şehir Ekle</a>
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ad</th>
+                            <th>Üretim Oranı</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var city in Model)
+                        {
+                            <tr>
+                                <td>@city.Id</td>
+                                <td>@city.Ad</td>
+                                <td>@city.UretimOrani</td>
+                                <td>
+                                    <a asp-action="CityEdit" asp-route-id="@city.Id">Düzenle</a> |
+                                    <a onclick="return confirm('Silmek istediğinizden emin misiniz?')" asp-action="CityDelete" asp-route-id="@city.Id">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

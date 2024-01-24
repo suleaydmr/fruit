@@ -1,0 +1,26 @@
+﻿@model Slider
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Yeni Slider Ekle</h2>
+
+                <form asp-action="SliderCreate" method="post">
+                    <div class="form-group">
+                        <label asp-for="ImagePath"></label>
+                        <input asp-for="ImagePath" class="form-control" />
+                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </form>
+
+                <a asp-action="SliderIndex">Geri Dön</a>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

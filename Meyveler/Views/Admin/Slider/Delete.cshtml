@@ -1,0 +1,23 @@
+﻿@model Slider
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Slider Sil</h2>
+
+                <p>Gerçekten silmek istediğinizden emin misiniz?</p>
+
+                <form asp-action="SliderDeleteConfirmed" method="post">
+                    <input type="hidden" asp-for="SliderId" />
+                    <button type="submit" class="btn btn-danger">Evet, Sil</button> |
+                    <a asp-action="SliderIndex">Hayır</a>
+                </form>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

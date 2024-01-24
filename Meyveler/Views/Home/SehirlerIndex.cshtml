@@ -1,0 +1,43 @@
+﻿@model List<Sehir>
+
+<div class="hero-wrap hero-bread" style="background-image: url('../images/bg_2.jpg');">
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+				<h1 class="mb-0 bread">Şehirler</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 ftco-animate fadeInUp ftco-animated">
+			<div class="cart-list">
+				<table class="table">
+					<thead class="thead-primary">
+						<tr class="text-center">
+							<th>Sıra</th>
+							<th>Şehir Adı</th>
+							<th>Üretim Oranı</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (int i = 0; i < Model.Count; i++)
+						{
+							<tr class="text-center">
+								<td>@(i + 1)</td>
+								<td class="product-name">
+									@Model[i].Ad
+								</td>
+								<td class="price">@Model[i].UretimOrani%</td>
+							</tr>
+						}
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

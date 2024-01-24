@@ -1,0 +1,33 @@
+﻿@model List<Cesit>
+
+<div class="hero-wrap hero-bread" style="background-image: url('../images/bg_1.jpg');">
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
+				<h1 class="mb-0 bread">Armut Çeşitleri</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="col-md-4 col-lg-4">
+                <div class="">
+                <div class="text py-3 pb-4 px-3 text-center">
+                    <h3><a href="#">@Model[i].Ad</a></h3>
+                    <div class="d-flex">
+                        <div class="pricing">
+                            <p>
+                                @Model[i].CesitMetin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

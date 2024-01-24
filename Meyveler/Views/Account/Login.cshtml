@@ -1,0 +1,26 @@
+﻿<div class="container">
+
+    <div class="col-md-12 justify-content-center d-flex mt-5 mb-5">
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Kullanıcı Adı" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Şifre" required>
+            </div>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                </div>
+            }
+            <div class="form-group">
+
+                <button class="btn btn-primary py-3 px-5" type="submit">Giriş Yap</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+﻿@model List<Cesit>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Ürün Çeşitleri</h2
+
+                <p>
+                    <a asp-action="CesitCreate">Yeni Ürün Çeşidi Ekle</a>
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ad</th>
+                            <th>Çeşit Metni</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cesit in Model)
+                        {
+                            <tr>
+                                <td>@cesit.CesitId</td>
+                                <td>@cesit.Ad</td>
+                                <td>@cesit.CesitMetin</td>
+                                <td>
+                                    <a asp-action="CesitEdit" asp-route-id="@cesit.CesitId">Düzenle</a> |
+                                    <a onclick="return confirm('Silmek istediğinizden emin misiniz?')" asp-action="CesitDelete" asp-route-id="@cesit.CesitId">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>

@@ -1,0 +1,51 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+
+
+@{
+    ViewData["Title"] = "Kullanıcı Yönetimi";
+}
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("_AdminSidebar")
+            <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+                <h2>Kullanıcı Yönetimi</h2>
+
+                <p>
+                    <a asp-action="KullaniciCreate" class="btn btn-success">Yeni Kullanıcı Ekle</a>
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Kullanıcı Adı
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @user.UserName
+                                </td>
+                                <td>
+                                    @if (!user.UserName.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        <a onClick="return confirm('Silmek istediğinizden emin misiniz?')" asp-action="KullaniciDelete" asp-route-id="@user.Id">Sil</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- .col-md-8 -->
+
+
+    </div>
+    </div>
+</section>
